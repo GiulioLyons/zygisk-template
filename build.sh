@@ -9,14 +9,13 @@ PATH=$PATH:$NDK_PATH
 
 if [ -d "$OUTDIR" ]; then
     rm -rf $OUTDIR
-    mkdir $OUTDIR
 fi
+mkdir $OUTDIR
+
 
 cd module
 ndk-build -j4
 cd ..
-
-exit
 
 cp -R $TEMPLATE $OUTDIR/$PROJECT_NAME
 cp module.prop $OUTDIR/$PROJECT_NAME
